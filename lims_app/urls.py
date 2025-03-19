@@ -19,6 +19,7 @@ from django.urls import path
 from .views import *
 
 urlpatterns = [
+    path("readers_tab",readers_tab),
     path("readers",readers),
     path("home", home),
     path("shop", shopping),
