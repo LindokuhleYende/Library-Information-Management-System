@@ -19,7 +19,7 @@
     <div class="row">
         <div class="col-md-4">
             <div class="container" style="overflow-y: auto; height: 600px; background-color: lightblue;">
-                <form class="d-flex" method="POST" action="/save">
+                <form class="d-flex" method="POST" action="/readers/add">
                     {% csrf_token %}
                     <table class="table" style="margin-top: 20px;">
                         <tbody>
@@ -105,6 +105,18 @@
                                 <tr>
                                     <td>
                                         {{ reader.id }}
+                                    </td>
+                                    <td>
+                                        {{ reader.reader_name }}
+                                    </td>
+                                    <td>
+                                        {{ reader.reader_contact }}
+                                    </td>
+                                    <td>
+                                        {{ reader.reference_id }}
+                                    </td>
+                                    <td>
+                                        {{ reader.reader_address }}
                                     </td>
                                 </tr>
                             {% endfor %}
