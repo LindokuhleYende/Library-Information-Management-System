@@ -11,3 +11,6 @@ def home(request):
 
 def shopping(request):
     return HttpResponse("Welcome to shopping")
+
+def save_student(request):
+    student_name = request.POST["student_name"]
