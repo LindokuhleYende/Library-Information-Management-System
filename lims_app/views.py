@@ -22,4 +22,4 @@ def save_student(request):
 
 def readers_tab(request):
     readers= reader.objects.all()
-    return render(request, "readers.html", context={"current_tab:": "readers", "readers":"readers"})
+    return render(request, "readers.html", context={"current_tab:": "readers", "readers":readers})
