@@ -32,3 +32,4 @@ def save_reader(request):
                          active =  True
                          )
     reader_item.save()
+    return redirect("/readers")
