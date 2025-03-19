@@ -3,6 +3,16 @@
 {% load static %}
 
 {% block main_content %}
+<div class="container-flex text-center">
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <h4 style="background-color: purple;">
+                Register new reader
+            </h4>
+        </div>
+    </div>
+
+</div>
 <form method="POST" action="/save">
     {% csrf_token %}
     <table>
