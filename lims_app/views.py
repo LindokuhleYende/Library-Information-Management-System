@@ -31,3 +31,4 @@ def save_reader(request):
                          reader_address=request.POST["reader_address"],
                          active =  True
                          )
+    reader_item.save()
