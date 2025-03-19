@@ -3,7 +3,35 @@
 {% load static %}
 
 {% block main_content %}
-<h1>
-    Hi
-</h1>
+<form method="POST" action="/save">
+    {% csrf_token %}
+    <table>
+        <tbody>
+            <tr>
+                <td>
+                    <label>Student Name</label>
+                </td>
+                <td>
+                    <input type="text" name="student_name">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Student Age</label>
+                </td>
+                <td>
+                    <input type="text" name="student_age">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="submit">
+                        Save
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</form>
 {% endblock main_content %}
