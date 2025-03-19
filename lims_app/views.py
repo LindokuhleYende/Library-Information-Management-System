@@ -14,4 +14,4 @@ def shopping(request):
 
 def save_student(request):
     student_name = request.Post["student_name"]
-    return HttpResponse("Welcome to the library", student_name)
+    return HttpResponse("Welcome to the library" + student_name)
