@@ -23,3 +23,10 @@ def save_student(request):
 def readers_tab(request):
     readers= reader.objects.all()
     return render(request, "readers.html", context={"current_tab:": "readers", "readers":readers})
+
+def save_reader(request):
+    reader_item = reader(reference_id=request.POST["reference_id"],
+                         reader_name=request.POST["reader_name"],
+                         reader_contact=request.POST["reader_contact"],
+                         reader_address=request.POST["reader_address"]
+                         )
