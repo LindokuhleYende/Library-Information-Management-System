@@ -14,3 +14,4 @@ def shopping(request):
 
 def save_student(request):
     student_name = request.POST["student_name"]
+    return HttpResponse("Welcome to the library", student_name)
