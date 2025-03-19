@@ -3,45 +3,58 @@
 {% load static %}
 
 {% block main_content %}
-<div class="container-flex text-center" style="background-color: cyan; padding-bottom: 20px; margin-top: 10px; vertical-align: middle; padding-top: 10px;">
+<div class="container-flex text-center" style="background-color: beige; padding-bottom: 20px; margin-top: 10px; vertical-align: middle; padding-top: 10px;">
     <div class="row justify-content-center" style="margin-top: 10px ; height: 60px;">
         <div class="col-md-4" style="background-color: purple;">
             <h4>
                 Register new reader
             </h4>
         </div>
+        <div class="col-md-8">
+            <h4>
+                Search readers
+            </h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="container" style="overflow-y: auto; height: 600px; background-color: lightblue;">
+                <form method="POST" action="/save">
+                    {% csrf_token %}
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <label>Name : </label>
+                                </td>
+                                <td>
+                                    <input type="text" name="student_name">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>Student Age</label>
+                                </td>
+                                <td>
+                                    <input type="text" name="student_age">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <button type="submit">
+                                        Save
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                
+                </form>
+
+            </div>
+        </div>
     </div>
 
 </div>
-<form method="POST" action="/save">
-    {% csrf_token %}
-    <table>
-        <tbody>
-            <tr>
-                <td>
-                    <label>Student Name</label>
-                </td>
-                <td>
-                    <input type="text" name="student_name">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label>Student Age</label>
-                </td>
-                <td>
-                    <input type="text" name="student_age">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <button type="submit">
-                        Save
-                    </button>
-                </td>
-            </tr>
-        </tbody>
-    </table>
 
-</form>
 {% endblock main_content %}
