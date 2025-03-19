@@ -29,4 +29,5 @@ def save_reader(request):
                          reader_name=request.POST["reader_name"],
                          reader_contact=request.POST["reader_contact"],
                          reader_address=request.POST["reader_address"]
+                         active =  True
                          )
