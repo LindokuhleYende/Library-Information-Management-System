@@ -27,7 +27,7 @@ def readers_tab(request):
     else:
         query = request.POST["query"]
         readers = reader.objects.raw("select * from lims_app_reader where reader_name like '%"+query+"%'")
-        return render(request, "readers.html", context={"current_tab:": "readers", "readers":readers})
+        return render(request, "readers.html", context={"current_tab:": "readers", "readers":readers, "query":query})
 
 def save_reader(request):
     reader_item = reader(reference_id=request.POST["reference_id"],
