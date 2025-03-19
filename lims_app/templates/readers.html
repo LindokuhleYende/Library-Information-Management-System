@@ -19,16 +19,16 @@
     <div class="row">
         <div class="col-md-4">
             <div class="container" style="overflow-y: auto; height: 600px; background-color: lightblue;">
-                <form method="POST" action="/save">
+                <form class="d-flex" method="POST" action="/save">
                     {% csrf_token %}
-                    <table>
+                    <table class="table" style="margin-top: 20px;">
                         <tbody>
                             <tr>
                                 <td>
                                     <label>Name : </label>
                                 </td>
                                 <td>
-                                    <input type="text" name="student_name">
+                                    <input class="form-control" type="text" name="reader_name">
                                 </td>
                             </tr>
                             <tr>
@@ -36,7 +36,23 @@
                                     <label>Contact :</label>
                                 </td>
                                 <td>
-                                    <input type="text" name="student_age">
+                                    <input class="form-control" type="text" name="reader_contact">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>Reference ID :</label>
+                                </td>
+                                <td>
+                                    <input class="form-control" type="text" name="reference_id">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>Address :</label>
+                                </td>
+                                <td>
+                                    <input class="form-control" type="text" name="reader_address">
                                 </td>
                             </tr>
                             <tr>
