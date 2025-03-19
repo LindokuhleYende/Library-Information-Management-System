@@ -22,6 +22,5 @@ urlpatterns = [
     #path("readers_tab",readers_tab),
     path("readers",readers_tab),
     path("home", home),
-    path("shop", shopping),
-    path("save", save_reader),
+    path("save", save_reader)
 ]
