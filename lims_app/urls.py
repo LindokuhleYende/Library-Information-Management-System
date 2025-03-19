@@ -23,5 +23,5 @@ urlpatterns = [
     path("readers",readers_tab),
     path("home", home),
     path("shop", shopping),
-    path("save", save_student),
+    path("save", save_reader),
 ]
