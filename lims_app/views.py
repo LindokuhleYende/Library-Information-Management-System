@@ -8,3 +8,6 @@ from django.http import HttpResponse
 # Create your views here.
 def home(request):
     return HttpResponse("Hello world")
+
+def shopping(request):
+    return HttpResponse("Welcome to shopping")

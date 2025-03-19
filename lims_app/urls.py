@@ -20,4 +20,5 @@ from .views import *
 
 urlpatterns = [
     path("home", home),
+    path("shop", shopping),
 ]
