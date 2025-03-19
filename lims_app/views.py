@@ -13,12 +13,12 @@ def home(request):
 ##def readers(request):
     #return render(request, "readers.html", context={"current_tab:": "readers"})
 
-def shopping(request):
-    return HttpResponse("Welcome to shopping")
+# def shopping(request):
+    # return HttpResponse("Welcome to shopping")
 
-def save_student(request):
-    student_name = request.POST["student_name"]
-    return render(request, "welcome.html",context={"student_name":student_name})
+# def save_student(request):
+    # student_name = request.POST["student_name"]
+    # return render(request, "welcome.html",context={"student_name":student_name})
 
 def readers_tab(request):
     readers= reader.objects.all()
