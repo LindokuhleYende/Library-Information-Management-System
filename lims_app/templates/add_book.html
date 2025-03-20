@@ -3,12 +3,12 @@
 {% load static %}
 
 {% block main_content %}
-<div>
+<div class="container" style="overflow-y: auto; height: 600px; background-color: lightblue;">
     <h1>Add a New Book</h1>
     <form method="post" class="d-flex">
         {% csrf_token %}
         <label for="title">Title:</label>
-        <input type="text" id="title" name="title" required><br>
+        <input type="text" id="title" name="title" required>
     
         <label for="author">Author:</label>
         <input type="text" id="author" name="author" required><br>
