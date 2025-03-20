@@ -29,6 +29,14 @@
                         <button class="btn btn-danger">
                             <a href="{% url 'decrease_quantity' book.id %}" style="color: aliceblue;">Decrease Quantity</a>
                         </button>
+                        {% if messages %}
+                            <ul>
+                                {% for message in messages %}
+                                <li>{{ message }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+
                     {% else %}
                         <span>Out of Stock</span>
                     {% endif %}
