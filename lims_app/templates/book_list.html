@@ -25,9 +25,13 @@
                 <td>{{ book.publication_date }}</td>
                 <td>{{ book.quantity }}</td>
                 <td>
-                    <button class="btn btn-danger">
-                        <a href="#" style="color: aliceblue;">Decrease Quantity</a>
-                    </button>
+                    {% if book.quantity > 0 %}
+                        <button class="btn btn-danger">
+                            <a href="#" style="color: aliceblue;">Decrease Quantity</a>
+                        </button>
+                    {% else %}
+                        <span>Out of Stock</span>
+                    {% endif %}
                 </td>
             </tr>
             {% empty %}
