@@ -38,3 +38,25 @@ def save_reader(request):
                          )
     reader_item.save()
     return redirect("/readers")
+
+def book_list(request):
+    books = Book.objects.all()  # Query all books
+    return render(request, 'book_list.html', {'books': books})
+
+def add_book(request):
+    if request.method == 'POST':
+        title = request.POST['title']
+        author = request.POST['author']
+        isbn = request.POST['isbn']
+        publication_date = request.POST['publication_date']
+        quantity = request.POST['quantity']
+
+        Book.objects.create(
+            title=title,
+            author=author,
+            isbn=isbn,
+            publication_date=publication_date,
+            quantity=quantity
+        )
+        return redirect('book_list')
+    return render(request, 'add_book.html')
