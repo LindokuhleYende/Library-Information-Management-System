@@ -13,6 +13,7 @@
                 <th>ISBN</th>
                 <th>Publication Date</th>
                 <th>Quantity</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -23,6 +24,11 @@
                 <td>{{ book.isbn }}</td>
                 <td>{{ book.publication_date }}</td>
                 <td>{{ book.quantity }}</td>
+                <td>
+                    <button class="btn btn-danger">
+                        <a href="#" style="color: aliceblue;">Decrease Quantity</a>
+                    </button>
+                </td>
             </tr>
             {% empty %}
             <tr>
