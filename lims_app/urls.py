@@ -24,5 +24,7 @@ urlpatterns = [
     path("home", home),
     path("readers/add", save_reader),
     path('books/', book_list, name='book_list'),
-    path('add-book/', add_book, name='add_book')
+    path('add-book/', add_book, name='add_book'),
+    path('decrease-quantity/<int:book_id>/', decrease_quantity, name='decrease_quantity')
+
 ]
