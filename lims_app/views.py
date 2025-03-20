@@ -1,5 +1,5 @@
-from django.shortcuts import render, redirect
-from django.contrib import admin
+from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib import admin, messages
 from django.http import HttpResponse
 from .models import *
 
@@ -60,3 +60,13 @@ def add_book(request):
         )
         return redirect('book_list')
     return render(request, 'add_book.html')
+
+def decrease_quantity(request, book_id):
+    book = get_object_or_404(Book, id=book_id)
+    if book.quantity > 0:
+        book.quantity -= 1
+        book.save()
+        messages.success(request, f'Quantity of "{book.title}" decreased by 1.')
+    else:
+        messages.warning(request, f'Cannot decrease quantity. "{book.title}" is out of stock.')
+    return redirect('book_list')
