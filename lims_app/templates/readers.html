@@ -19,7 +19,7 @@
     <div class="row">
         <div class="col-md-4">
             <div class="container" style="overflow-y: auto; height: 600px; background-color: lightblue;">
-                <form class="d-flex" method="POST" action="/readers/add">
+                <form class="d-flex" hx-post="/readers/add" hx-target="#response" hx-swap="innerHTML">
                     {% csrf_token %}
                     <table class="table" style="margin-top: 20px;">
                         <tbody>
@@ -78,7 +78,7 @@
             <div class="row">
                 <nav class="navbar navbar-expand-lg bg-body-tertiary">
                     <div class="container-fluid justify-content-center align-items-center">
-                        <form class="d-flex" role="search" hx-post="/readers/search/" hx-trigger="keyup changed delay:500ms" hx-target="#reader-list">
+                        <form class="d-flex" role="search" action="/readers" method="POST">
                             {% csrf_token %}
                             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="query" value="{{query}}">
                             <button class="btn btn-outline-primary" type="submit">Search</button>
@@ -90,7 +90,7 @@
                 <p>{{readers|length}} readers subscribed</p>
             </div>
             <div class="row" style="margin-top: 20px;">
-                <div class="container" style="overflow-y: auto; height: 600px;" >
+                <div class="container" style="overflow-y: auto; height: 600px;" id="response" >
                     <table class="table table-hover">
                         <thead>
                             <tr>
@@ -107,7 +107,7 @@
                                     <td>
                                         {{ reader.id }}
                                     </td>
-                                    <td id="reader-list">
+                                    <td>
                                         {{ reader.reader_name }}
                                     </td>
                                     <td>
