@@ -37,16 +37,7 @@ def save_reader(request):
                          active =  True
                          )
     reader_item.save()
-    # return redirect("partials/readers.html")
-    return HttpResponse(f"""
-            <tr>
-                <td>{reader.id}</td>
-                <td>{reader.reader_name}</td>
-                <td>{reader.reader_contact}</td>
-                <td>{reader.reference_id}</td>
-                <td>{reader.reader_address}</td>
-            </tr>
-        """)
+    return redirect("partials/readers.html")
 
 def book_list(request):
     books = Book.objects.all()  # Query all books
