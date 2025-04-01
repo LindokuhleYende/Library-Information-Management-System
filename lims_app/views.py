@@ -23,7 +23,7 @@ def home(request):
 def readers_tab(request):
     if request.method=="GET":
         readers= reader.objects.all()
-        return render(request, "partials/readers.html", context={"current_tab:": "readers", "readers":readers})
+        return render(request, "readers.html", context={"current_tab:": "readers", "readers":readers})
     else:
         query = request.POST["query"]
         readers = reader.objects.raw("select * from lims_app_reader where reader_name like '%"+query+"%'")
