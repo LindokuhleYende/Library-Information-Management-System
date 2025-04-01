@@ -25,11 +25,9 @@
                 <td>{{ book.publication_date }}</td>
                 <td>{{ book.quantity }}</td>
                 <td>
-                    <button class="btn btn-danger" 
-                        hx-post="{% url 'decrease_quantity' book.id %}" 
-                        hx-target =".table"
-                        style="color: aliceblue;">Decrease Quantity
-                            <!-- <a href="{% url 'decrease_quantity' book.id %}" style="color: aliceblue;">Decrease Quantity</a> -->
+                    <button class="btn btn-danger"  
+                        style="color: aliceblue;">
+                            <a href="{% url 'decrease_quantity' book.id %}" style="color: aliceblue;">Decrease Quantity</a>
                     </button>
                 </td>
             </tr>
