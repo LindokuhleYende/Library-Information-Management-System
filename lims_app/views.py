@@ -66,7 +66,8 @@ def decrease_quantity(request, book_id):
     if book.quantity > 0:
         book.quantity -= 1
         book.save()
-        messages.success(request, f'Quantity of "{book.title}" decreased by 1.')
-    else:
-        messages.warning(request, f'Cannot decrease quantity. "{book.title}" is out of stock.')
+    if book.quantity == 0:
+        # Delete the book if quantity is zero
+        book.delete()
     return redirect('book_list')
+ 

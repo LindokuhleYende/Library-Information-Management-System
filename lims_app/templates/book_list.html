@@ -5,7 +5,7 @@
 {% block main_content %}
 <div class="container-fluid justify-content-center" id="book-list">
     <h1>Books</h1>
-    <table class="table" style="margin-top: 20px;">
+    <table class="table" style="margin-top: 20px;" >
         <thead>
             <tr>
                 <th>Title</th>
@@ -25,14 +25,12 @@
                 <td>{{ book.publication_date }}</td>
                 <td>{{ book.quantity }}</td>
                 <td>
-                    {% if book.quantity > 0 %}
-                        <button class="btn btn-danger">
-                            <a href="{% url 'decrease_quantity' book.id %}" style="color: aliceblue;">Decrease Quantity</a>
-                        </button>
-
-                    {% else %}
-                        <span>Out of Stock</span>
-                    {% endif %}
+                    <button class="btn btn-danger" 
+                        hx-post="{% url 'decrease_quantity' book.id %}" 
+                        hx-target =".table"
+                        style="color: aliceblue;">Decrease Quantity
+                            <!-- <a href="{% url 'decrease_quantity' book.id %}" style="color: aliceblue;">Decrease Quantity</a> -->
+                    </button>
                 </td>
             </tr>
             {% empty %}
