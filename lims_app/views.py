@@ -37,7 +37,7 @@ def save_reader(request):
                          active =  True
                          )
     reader_item.save()
-    return redirect("/readers")
+    return redirect("partials/readers.html")
 
 def book_list(request):
     books = Book.objects.all()  # Query all books
