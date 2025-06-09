@@ -21,6 +21,7 @@ from .views import *
 urlpatterns = [
     #path("readers_tab",readers_tab),
     path("readers",readers_tab),
+    path("/",home),
     path("home", home),
     path("readers/add", save_reader),
     path('books/', book_list, name='book_list'),
